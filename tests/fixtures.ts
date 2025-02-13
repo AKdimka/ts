@@ -1,10 +1,8 @@
 import { test as base } from '@playwright/test';
+import { SearchPage } from './searchPage';
 
-export const test = base.extend({
-  page: async ({ page }, use) => {
-    await page.goto('https://example.com'); // Открываем страницу перед тестами
-    await use(page);
+export const test = base.extend<{ searchPage: SearchPage }>({
+  searchPage: async ({ page }, use) => {
+    await use(new SearchPage(page));
   },
 });
-
-export { expect } from '@playwright/test';

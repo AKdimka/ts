@@ -1,6 +1,8 @@
-import { test, expect } from '@playwright/test';
+import { test } from './fixtures';
+import { expect } from '@playwright/test';
 
-test('Покупка товара на Rozetka', async ({ page }) => {
+test('Покупка товара на Rozetka', async ({ searchPage }) => {
+  const page = searchPage.getPage();
   await page.goto('https://rozetka.com.ua/ua/bang-olufsen-1240600/p350661714/');
 
 	await page.click('button.buy-button');
