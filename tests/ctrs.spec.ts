@@ -19,7 +19,7 @@ test('Проверка фильтра на Comfy', async ({ searchPage }) => {
 	await page.waitForSelector('.pr', { timeout: 5000 });
 	
 	await page.waitForSelector('label:has-text("Apple")');
-	await page.locator('label:has-text("Apple")').click();
+	await page.locator('.Collapse-module__content___2Qixd label:has-text("Apple")').click();
 
 	await page.waitForLoadState('networkidle');
 
